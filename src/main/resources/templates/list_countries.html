@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+<tr th:each = "country : ${keyContries}">
+	<td th:text = ${country.id}></td>
+	<td th:text = ${country.name}></td>
+	<td th:text = ${country.population}></td>
+ 	<td>
+ 		<a th:href="@{/delete/{idhere}(idhere = ${country.id})}"> Delete</a>
+ 
+ 	<td>
+ 		<a th:href= "@{/edit/{id} (id = ${country.id})}"> Edit</a>
+ 	
+</tr>
+</table>
+</body>
+</html>

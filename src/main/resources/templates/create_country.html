@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Thymeleaf Application - Form Samples - Inputs</title>
+</head>
+<body>
+<form action="#" th:action ="@{/create}" th:object = "${country}" method = "post">
+    <label for = "name"> Name </label>
+    <input type = "text" th:field = "*{name}"  id = "name" placeholder="Type your country name here">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for = "population"> Population </label>
+    <input type = "text" th:field = "*{population}"  id = "population" placeholder="Type the population of your country here">
+    <span th:if="${#fields.hasErrors('population')}" th:errors="*{population}"></span>
+    <input type="submit" value="Add Country">
+</form>
+</body>
+</html>
